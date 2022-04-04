@@ -1,0 +1,39 @@
+import random
+def gameWin(com, I):
+    if com == I:
+        return None
+    elif com == 'r':
+        if I == 'p':
+            return True
+        elif I == 's':
+            return False
+    elif com == 'p':
+        if I == 'r':
+            return False
+        elif I == 's':
+            return True
+    elif com == 's':
+        if I == 'r':
+            return True
+        elif I == 'p':
+            return False
+print("com turn: Rock(r) Paper(p) or scissor(s)?")
+randNo = random.randint(1, 3)
+if randNo == 1:
+    com = 'r'
+elif randNo == 2:
+    com = 'p'
+elif randNo == 3:
+    com = 's'
+
+I = input("my turn: Rock(r) Paper(p) or scissor(s)? ")
+a = gameWin(com, I)
+print(f"computer chose {com}")
+print(f"I chose {I}")
+
+if a == None:
+    print("The game is tie!")
+elif a:
+    print("I win!")
+else:
+    print("I lose!")
